@@ -1,0 +1,1 @@
+YOLO is also characterized by lower accuracy when compared to much slower object detection algorithms like Fast RCNN.
