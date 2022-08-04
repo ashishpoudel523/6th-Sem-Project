@@ -1,1 +1,15 @@
-YOLO is also characterized by lower accuracy when compared to much slower object detection algorithms like Fast RCNN.
+data preprocessing 
+converting all the images in dataset into arrays. those arrays create the deep learning models
+
+os.listdir lists all the images
+
+load_image is coming from keras.preprocessing
+
+image_to_array from keras.preprocessing.image
+
+labelBinarizer from sklearn.preprocessor
+
+convert data. labels numpy arrays
+
+20% img for testing, 80% img from training
+

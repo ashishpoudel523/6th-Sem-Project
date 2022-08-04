@@ -106,17 +106,11 @@ while True:
         # determine the class label and color we'll use to draw
         # the bounding box and text
 
+        label = "." if mask > withoutMask else "."
+        color = (0, 0, 0) if label == "Wearing Mask" else (0, 0, 0)
+        # color = (0, 255, 0) if label == "Wearing Mask" else (0, 0, 255)
 
-
-
-        #label = "Wearing Mask" if mask > withoutMask else "Not wearing Mask"
-        #color = (0, 255, 0) if label == "Wearing Mask" else (0, 0, 255)
-
-
-
-
-		#audio
-
+        # audio
 
         # include the probability in the label
         label = "{}: {:.2f}%".format(label, max(mask, withoutMask) * 100)
@@ -128,7 +122,7 @@ while True:
         cv2.rectangle(frame, (startX, startY), (endX, endY), color, 2)
 
     # show the output frame
-    cv2.imshow("Frame", frame)
+    cv2.imshow("Face Mask Detector", frame)
     key = cv2.waitKey(1) & 0xFF
 
     # if the `q` key was pressed, break from the loop
