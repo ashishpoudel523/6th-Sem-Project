@@ -106,9 +106,8 @@ while True:
         # determine the class label and color we'll use to draw
         # the bounding box and text
 
-        label = "." if mask > withoutMask else "."
-        color = (0, 0, 0) if label == "Wearing Mask" else (0, 0, 0)
-        # color = (0, 255, 0) if label == "Wearing Mask" else (0, 0, 255)
+        label = "With Mask" if mask > withoutMask else "Without Mask"
+        color = (0, 255, 0) if label == "Wearing Mask" else (0, 0, 255)
 
         # audio
 
