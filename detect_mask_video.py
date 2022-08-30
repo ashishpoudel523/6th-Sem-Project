@@ -8,6 +8,9 @@ import imutils
 import time
 import cv2
 import os
+import pygame
+import playsound as ps
+from pygame import mixer
 
 
 def detect_and_predict_mask(frame, faceNet, maskNet):
@@ -107,11 +110,16 @@ while True:
         # the bounding box and text
 
         label = "With Mask" if mask > withoutMask else "Without Mask"
-        color = (0, 255, 0) if label == "Wearing Mask" else (0, 0, 255)
+        color = (0, 255, 0) if label == "With Mask" else (0, 0, 255)
 
         # audio
 
-        # include the probability in the label
+        if label == "Withot Mask":
+            sound = "E:\All Error\College Docs\All BCA 6th Sem\Project 2\FaceMask\sound.mp3"
+            mixer.init()
+            mixer.music.load(sound)
+            mixer.music.play()
+            # include the probability in the label
         label = "{}: {:.2f}%".format(label, max(mask, withoutMask) * 100)
 
         # display the label and bounding box rectangle on the output
