@@ -114,11 +114,11 @@ while True:
 
         # audio
 
-        if label == "Withot Mask":
-            sound = "E:\All Error\College Docs\All BCA 6th Sem\Project 2\FaceMask\sound.mp3"
-            mixer.init()
-            mixer.music.load(sound)
-            mixer.music.play()
+       
+        sound = "E:\All Error\College Docs\All BCA 6th Sem\Project 2\FaceMask\sound.mp3"
+        mixer.init()
+        mixer.music.load(sound)
+        mixer.music.play()  if label == "Withot Mask" else ()
             # include the probability in the label
         label = "{}: {:.2f}%".format(label, max(mask, withoutMask) * 100)
 
