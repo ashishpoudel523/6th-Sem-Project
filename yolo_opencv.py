@@ -87,6 +87,11 @@ idxs = cv2.dnn.NMSBoxes(boxes, confidences, SCORE_THRESHOLD, IOU_THRESHOLD)
 font_scale = 1
 thickness = 1
 
+
+
+#IOU (NON MAX SUPRESSION)
+
+
 # ensure at least one detection exists
 if len(idxs) > 0:
     # loop over the indexes we are keeping

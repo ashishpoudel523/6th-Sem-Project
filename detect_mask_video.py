@@ -40,6 +40,12 @@ def detect_and_predict_mask(frame, faceNet, maskNet):
         # filter out weak detections by ensuring the confidence is
         # greater than the minimum confidence
         if confidence > 0.5:
+
+
+            #BOUNDING BOX
+
+
+
             # compute the (x, y)-coordinates of the bounding box for
             # the object
             box = detections[0, 0, i, 3:7] * np.array([w, h, w, h])
@@ -88,6 +94,12 @@ maskNet = load_model("mask_detector.model")
 print("[INFO] starting video stream...")
 vs = VideoStream(src=0).start()
 
+
+
+
+# DRAWING DETECTED OBJECTS
+
+
 # loop over the frames from the video stream
 while True:
     # grab the frame from the threaded video stream and resize it
@@ -119,10 +131,16 @@ while True:
             pygame.mixer.music.load("sound.mp3")
             pygame.mixer.music.play()
             time.sleep(0.5)
-        if label == " ":
+        if label == "With Mask":
             pygame.init()
-            pygame.mixer.music.load("not_found.mp3")
+            # pygame.mixer.music.load("")
+            # pygame.mixer.music.play()
+            # time.sleep(1)
+        else:
+            pygame.init()
+            pygame.mixer.music.load("not.mp3")
             pygame.mixer.music.play()
+            time.sleep(1)
         # ps("sound.mp3")
         # include the probability in the label
         label = "{}: {:.2f}%".format(label, max(mask, withoutMask) * 100)
