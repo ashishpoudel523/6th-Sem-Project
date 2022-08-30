@@ -114,12 +114,17 @@ while True:
 
         # audio
 
-       
-        sound = "E:\All Error\College Docs\All BCA 6th Sem\Project 2\FaceMask\sound.mp3"
-        mixer.init()
-        mixer.music.load(sound)
-        mixer.music.play()  if label == "Withot Mask" else ()
-            # include the probability in the label
+        if label == "Without Mask":
+            pygame.init()
+            pygame.mixer.music.load("sound.mp3")
+            pygame.mixer.music.play()
+            time.sleep(0.5)
+        if label == " ":
+            pygame.init()
+            pygame.mixer.music.load("sound.mp3")
+            pygame.mixer.music.play()
+        # ps("sound.mp3")
+        # include the probability in the label
         label = "{}: {:.2f}%".format(label, max(mask, withoutMask) * 100)
 
         # display the label and bounding box rectangle on the output
