@@ -121,7 +121,7 @@ while True:
             time.sleep(0.5)
         if label == " ":
             pygame.init()
-            pygame.mixer.music.load("sound.mp3")
+            pygame.mixer.music.load("not_found.mp3")
             pygame.mixer.music.play()
         # ps("sound.mp3")
         # include the probability in the label
