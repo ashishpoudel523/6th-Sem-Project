@@ -18,11 +18,11 @@ layer {
     lr_mult: 0.0
   }
   param {
-    lr_mult: 0.0
+    lr_mult: 0.00
   }
 }
 layer {
-  name: "data_scale"
+  name: "data_scale "
   type: "Scale"
   bottom: "data_bn"
   top: "data_bn"
